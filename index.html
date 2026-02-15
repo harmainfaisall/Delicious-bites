@@ -1,0 +1,728 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+        content="Delicious Bites - Fresh, Homemade Meals Delivered to Your Door. Order online for fast delivery.">
+    <title>Delicious Bites | Restaurant & Food Delivery</title>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Roboto:wght@300;400;500;700&display=swap"
+        rel="stylesheet">
+    <!-- CSS -->
+    <link rel="stylesheet" href="styles.css">
+    <!-- Font Awesome for Icons (using CDN for simplicity) -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+
+<body>
+
+    <!-- Header / Navigation -->
+    <header class="header">
+        <div class="container nav-container">
+            <a href="#" class="logo">
+                <i class="fas fa-utensils"></i> Delicious<span class="highlight">Bites</span>
+            </a>
+            <nav class="nav-menu">
+                <ul class="nav-list">
+                    <li><a href="#home" class="nav-link">Home</a></li>
+                    <li><a href="#menu" class="nav-link">Menu</a></li>
+                    <li><a href="#about" class="nav-link">About</a></li>
+                    <li><a href="#offers" class="nav-link">Offers</a></li>
+                    <li><a href="#reviews" class="nav-link">Reviews</a></li>
+                    <li><a href="#order" class="nav-link btn-primary">Order Now</a></li>
+                    <li>
+                        <div class="cart-icon" id="cart-btn-desktop">
+                            <i class="fas fa-shopping-cart"></i>
+                            <span class="cart-count">0</span>
+                        </div>
+                    </li>
+                </ul>
+            </nav>
+            <div class="mobile-nav-icons">
+                <div class="cart-icon" id="cart-btn">
+                    <i class="fas fa-shopping-cart"></i>
+                    <span class="cart-count">0</span>
+                </div>
+                <div class="hamburger">
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- ... (rest of the file remains unchanged until the end) ... -->
+
+    <!-- Cart Sidebar -->
+    <div class="cart-overlay" id="cart-overlay"></div>
+    <div class="cart-sidebar" id="cart-sidebar">
+        <div class="cart-header">
+            <h2>Your Cart</h2>
+            <span class="close-cart"><i class="fas fa-times"></i></span>
+        </div>
+        <div class="cart-items" id="cart-items">
+            <!-- Cart items will be injected here -->
+            <div class="empty-cart-msg">Your cart is empty</div>
+        </div>
+        <div class="cart-footer">
+            <div class="cart-total">
+                <span>Total:</span>
+                <span id="cart-total-price">$0.00</span>
+            </div>
+            <button class="btn btn-primary btn-block" id="checkout-btn">Proceed to Checkout</button>
+        </div>
+    </div>
+
+    <!-- Back to Top Button -->
+    <button id="back-to-top" title="Go to top"><i class="fas fa-arrow-up"></i></button>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero fade-in">
+        <div class="hero-overlay"></div>
+        <div class="hero-content container">
+            <h1 class="hero-title">
+                <span class="word">
+                    <span class="char" style="--char-index: 1;">S</span>
+                    <span class="char" style="--char-index: 2;">a</span>
+                    <span class="char" style="--char-index: 3;">v</span>
+                    <span class="char" style="--char-index: 4;">o</span>
+                    <span class="char" style="--char-index: 5;">r</span>
+                </span>
+                <span class="word">
+                    <span class="char" style="--char-index: 6;">t</span>
+                    <span class="char" style="--char-index: 6.5;">h</span>
+                    <span class="char" style="--char-index: 7;">e</span>
+                </span>
+                <span class="word">
+                    <span class="char" style="--char-index: 8;">F</span>
+                    <span class="char" style="--char-index: 9;">l</span>
+                    <span class="char" style="--char-index: 10;">a</span>
+                    <span class="char" style="--char-index: 11;">v</span>
+                    <span class="char" style="--char-index: 12;">o</span>
+                    <span class="char" style="--char-index: 13;">r</span>
+                </span>
+            </h1>
+            <p class="hero-tagline">Fresh Meals Delivered to Your Door</p>
+            <a href="#order" class="btn btn-primary btn-large">Order Now</a>
+        </div>
+    </section>
+
+    <!-- Menu Section -->
+    <section id="menu" class="menu-section section-padding fade-in-scroll">
+        <div class="container">
+            <h2 class="section-title">Our Menu</h2>
+            <div class="menu-categories">
+                <button class="category-btn active" data-category="all">All</button>
+                <button class="category-btn" data-category="starters">Starters</button>
+                <button class="category-btn" data-category="main">Main Course</button>
+                <button class="category-btn" data-category="desserts">Desserts</button>
+                <button class="category-btn" data-category="beverages">Beverages</button>
+            </div>
+            <div class="menu-grid" id="menu-grid">
+                <!-- Starters -->
+                <div class="menu-card" data-category="starters">
+                    <img src="images/Crispy Calamari2.jpg"
+                        alt="Crispy Calamari" loading="lazy">
+                    <div class="menu-info">
+                        <h3>Crispy Calamari</h3>
+                        <p>Golden fried squid rings served with marinara sauce.</p>
+                        <div class="menu-footer">
+                            <span class="price">$12.99</span>
+                            <button class="btn-add">Add to Cart</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="menu-card" data-category="starters">
+                    <img src="images/tomato brusta.jpg"
+                        alt="Bruschetta" loading="lazy">
+                    <div class="menu-info">
+                        <h3>Tomato Bruschetta</h3>
+                        <p>Toasted bread topped with fresh tomatoes and basil.</p>
+                        <div class="menu-footer">
+                            <span class="price">$8.99</span>
+                            <button class="btn-add">Add to Cart</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="menu-card" data-category="starters">
+                    <img src="images/garlic bread.jpg"
+                        alt="Garlic Bread" loading="lazy">
+                    <div class="menu-info">
+                        <h3>Cheesy Garlic Bread</h3>
+                        <p>Freshly baked baguette with garlic butter and herbs.</p>
+                        <div class="menu-footer">
+                            <span class="price">$6.99</span>
+                            <button class="btn-add">Add to Cart</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="menu-card" data-category="starters">
+                    <img src="https://images.unsplash.com/photo-1639024471283-03518883512d?q=80&w=2070&auto=format&fit=crop"
+                        alt="Onion Rings" loading="lazy">
+                    <div class="menu-info">
+                        <h3>Crispy Onion Rings</h3>
+                        <p>Golden battered onion rings with ranch dip.</p>
+                        <div class="menu-footer">
+                            <span class="price">$7.49</span>
+                            <button class="btn-add">Add to Cart</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="menu-card" data-category="starters">
+                    <img src="https://images.unsplash.com/photo-1529042410759-befb1204b468?q=80&w=1972&auto=format&fit=crop"
+                        alt="Meatballs" loading="lazy">
+                    <div class="menu-info">
+                        <h3>Italian Meatballs</h3>
+                        <p>Homemade meatballs in rich tomato sauce.</p>
+                        <div class="menu-footer">
+                            <span class="price">$10.99</span>
+                            <button class="btn-add">Add to Cart</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="menu-card" data-category="starters">
+                    <img src="https://images.unsplash.com/photo-1626645738196-c2a7c87a8f58?q=80&w=2070&auto=format&fit=crop"
+                        alt="Chicken Wings" loading="lazy">
+                    <div class="menu-info">
+                        <h3>Spicy Chicken Wings</h3>
+                        <p>Glazed in our signature hot sauce.</p>
+                        <div class="menu-footer">
+                            <span class="price">$11.99</span>
+                            <button class="btn-add">Add to Cart</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Mains -->
+                <div class="menu-card" data-category="main">
+                    <img src="https://images.unsplash.com/photo-1568901346375-23c9450c58cd?q=80&w=1998&auto=format&fit=crop"
+                        alt="Signature Burger" loading="lazy">
+                    <div class="menu-info">
+                        <h3>Signature Burger</h3>
+                        <p>Juicy beef patty with cheddar, lettuce, and secret sauce.</p>
+                        <div class="menu-footer">
+                            <span class="price">$15.99</span>
+                            <button class="btn-add">Add to Cart</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="menu-card" data-category="main">
+                    <img src="images/Grilled Salmon2.avif"
+                        alt="Grilled Salmon" loading="lazy">
+                    <div class="menu-info">
+                        <h3>Grilled Salmon</h3>
+                        <p>Fresh atlantic salmon served with roasted vegetables.</p>
+                        <div class="menu-footer">
+                            <span class="price">$22.99</span>
+                            <button class="btn-add">Add to Cart</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="menu-card" data-category="main">
+                    <img src="images/Ribeye Steak2.jpg"
+                        alt="Ribeye Steak" loading="lazy">
+                    <div class="menu-info">
+                        <h3>Ribeye Steak</h3>
+                        <p>Premium cut steak grilled to perfection with fries.</p>
+                        <div class="menu-footer">
+                            <span class="price">$28.99</span>
+                            <button class="btn-add">Add to Cart</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="menu-card" data-category="main">
+                    <img src="images/Truffle Mushroom Pastaa.avif"
+                        alt="Truffle Pasta" loading="lazy">
+                    <div class="menu-info">
+                        <h3>Truffle Mushroom Pasta</h3>
+                        <p>Creamy fettuccine with truffle oil and parmesan.</p>
+                        <div class="menu-footer">
+                            <span class="price">$18.99</span>
+                            <button class="btn-add">Add to Cart</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="menu-card" data-category="main">
+                    <img src="images/bbq fish ribs.jpg"
+                        alt="BBQ Ribs" loading="lazy">
+                    <div class="menu-info">
+                        <h3>BBQ Fish Ribs</h3>
+                        <p>Tender ribs slathered in smokey BBQ sauce.</p>
+                        <div class="menu-footer">
+                            <span class="price">$24.99</span>
+                            <button class="btn-add">Add to Cart</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="menu-card" data-category="main">
+                    <img src="images/Tuscan Layered Lasagna.avif"
+                        alt="Fish and Chips" loading="lazy">
+                    <div class="menu-info">
+                        <h3>Tuscan Layered Lasagna</h3>
+                        <p>Delicate pasta layers with slow-cooked beef ragu, creamy béchamel, and melted mozzarella, baked to golden perfection.</p>
+                        <div class="menu-footer">
+                            <span class="price">$16.99</span>
+                            <button class="btn-add">Add to Cart</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="menu-card" data-category="main">
+                    <img src="images/Chicken Caesar Salad.avif"
+                        alt="Caesar Salad" loading="lazy">
+                    <div class="menu-info">
+                        <h3>Chicken Caesar Salad</h3>
+                        <p>Fresh romaine, croutons, parmesan, and grilled chicken.</p>
+                        <div class="menu-footer">
+                            <span class="price">$13.99</span>
+                            <button class="btn-add">Add to Cart</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="menu-card" data-category="main">
+                    <img src="images/Grilled Veggie Wrap.jpg"
+                        alt="Veggie Wrap" loading="lazy">
+                    <div class="menu-info">
+                        <h3>Grilled Veggie Wrap</h3>
+                        <p>Seasonal vegetables and humus in a toasted tortilla.</p>
+                        <div class="menu-footer">
+                            <span class="price">$11.49</span>
+                            <button class="btn-add">Add to Cart</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Desserts -->
+                <div class="menu-card" data-category="desserts">
+                    <img src="images/cheese cake 2.png"
+                        alt="Cheesecake" loading="lazy">
+                    <div class="menu-info">
+                        <h3>NY Cheesecake</h3>
+                        <p>Creamy cheesecake with a graham cracker crust.</p>
+                        <div class="menu-footer">
+                            <span class="price">$7.99</span>
+                            <button class="btn-add">Add to Cart</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="menu-card" data-category="desserts">
+                    <img src="images/Classic Tiramisu.jpg"
+                        alt="Tiramisu" loading="lazy">
+                    <div class="menu-info">
+                        <h3>Classic Tiramisu</h3>
+                        <p>Italian coffee-flavored dessert with mascarpone.</p>
+                        <div class="menu-footer">
+                            <span class="price">$8.99</span>
+                            <button class="btn-add">Add to Cart</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="menu-card" data-category="desserts">
+                    <img src="https://images.unsplash.com/photo-1624353365286-3f8d62daad51?q=80&w=2070&auto=format&fit=crop"
+                        alt="Lava Cake" loading="lazy">
+                    <div class="menu-info">
+                        <h3>Choco Lava Cake</h3>
+                        <p>Warm chocolate cake with a molten center.</p>
+                        <div class="menu-footer">
+                            <span class="price">$9.99</span>
+                            <button class="btn-add">Add to Cart</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="menu-card" data-category="desserts">
+                    <img src="images/Gemini_Generated_Image_nnt5c0nnt5c0nnt5.png"
+                        alt="Brownie" loading="lazy">
+                    <div class="menu-info">
+                        <h3>Fudge Brownie</h3>
+                        <p>Rich chocolate brownie served with vanilla ice cream.</p>
+                        <div class="menu-footer">
+                            <span class="price">$6.99</span>
+                            <button class="btn-add">Add to Cart</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="menu-card" data-category="desserts">
+                    <img src="https://images.unsplash.com/photo-1488477181946-6428a0291777?q=80&w=1974&auto=format&fit=crop"
+                        alt="Fruit Tart" loading="lazy">
+                    <div class="menu-info">
+                        <h3>Seasonal Fruit Tart</h3>
+                        <p>Crispy crust filled with custard and fresh fruits.</p>
+                        <div class="menu-footer">
+                            <span class="price">$8.49</span>
+                            <button class="btn-add">Add to Cart</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="menu-card" data-category="desserts">
+                    <img src="https://images.unsplash.com/photo-1560008581-09826d1de69e?q=80&w=1974&auto=format&fit=crop"
+                        alt="Ice Cream" loading="lazy">
+                    <div class="menu-info">
+                        <h3>Ice Cream Sundae</h3>
+                        <p>Three scoops of your choice with chocolate syrup.</p>
+                        <div class="menu-footer">
+                            <span class="price">$7.49</span>
+                            <button class="btn-add">Add to Cart</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Beverages -->
+                <div class="menu-card" data-category="beverages">
+                    <img src="https://images.unsplash.com/photo-1513558161293-cdaf765ed2fd?q=80&w=1974&auto=format&fit=crop"
+                        alt="Fresh Lemonade" loading="lazy">
+                    <div class="menu-info">
+                        <h3>Fresh Lemonade</h3>
+                        <p>Homemade lemonade with mint and ice.</p>
+                        <div class="menu-footer">
+                            <span class="price">$4.99</span>
+                            <button class="btn-add">Add to Cart</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="menu-card" data-category="beverages">
+                    <img src="https://images.unsplash.com/photo-1544145945-f90425340c7e?q=80&w=1974&auto=format&fit=crop"
+                        alt="Iced Coffee" loading="lazy">
+                    <div class="menu-info">
+                        <h3>Cold Brew Coffee</h3>
+                        <p>Smooth cold brew served with milk or black.</p>
+                        <div class="menu-footer">
+                            <span class="price">$5.49</span>
+                            <button class="btn-add">Add to Cart</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="menu-card" data-category="beverages">
+                    <img src="https://images.unsplash.com/photo-1551024709-8f23befc6f87?q=80&w=2157&auto=format&fit=crop"
+                        alt="Cocktail" loading="lazy">
+                    <div class="menu-info">
+                        <h3>Signature Mojito</h3>
+                        <p>Refreshing blend of rum, mint, lime, and soda.</p>
+                        <div class="menu-footer">
+                            <span class="price">$10.99</span>
+                            <button class="btn-add">Add to Cart</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="menu-card" data-category="beverages">
+                    <img src="images/berry blast smoothie.avif"
+                        alt="Smoothie" loading="lazy">
+                    <div class="menu-info">
+                        <h3>Berry Blast Smoothie</h3>
+                        <p>Mixed berries blended with yogurt and honey.</p>
+                        <div class="menu-footer">
+                            <span class="price">$6.99</span>
+                            <button class="btn-add">Add to Cart</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="menu-card" data-category="beverages">
+                    <img src="images/Oreo Milkshake.avif"
+                        alt="Milkshake" loading="lazy">
+                    <div class="menu-info">
+                        <h3>Oreo Milkshake</h3>
+                        <p>Thick shake topped with whipped cream and crumbles.</p>
+                        <div class="menu-footer">
+                            <span class="price">$7.49</span>
+                            <button class="btn-add">Add to Cart</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="menu-card" data-category="beverages">
+                    <img src="images/Iced Green Tea2.avif"
+                        alt="Green Tea" loading="lazy">
+                    <div class="menu-info">
+                        <h3>Iced Green Tea</h3>
+                        <p>Chilled jasmine green tea with lemon.</p>
+                        <div class="menu-footer">
+                            <span class="price">$4.49</span>
+                            <button class="btn-add">Add to Cart</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="about-section section-padding fade-in-scroll">
+        <div class="container about-container">
+            <div class="about-text">
+                <h2 class="section-title">Our Story</h2>
+                <p>Delicious Bites is a family-owned restaurant specializing in fresh, homemade meals since 2010. Our
+                    mission is to deliver quality food with love, crafted from locally sourced ingredients.</p>
+                <p>Our story began in a small kitchen with a big dream: to bring people together through the joy of
+                    food. Today, we continue that tradition with every dish we serve.</p>
+                <a href="#menu" class="btn btn-secondary">View Menu</a>
+            </div>
+            <div class="about-image">
+                <img src="images/story.avif"
+                    alt="Restaurant Interior" loading="lazy">
+            </div>
+        </div>
+    </section>
+
+    <!-- Special Offers Section -->
+    <section id="offers" class="offers-section section-padding fade-in-scroll">
+        <div class="container">
+            <h2 class="section-title">Special Offers</h2>
+            <div class="offers-grid">
+                <div class="offer-card slide-in-left">
+                    <span class="badge">20% OFF</span>
+                    <img src="https://images.unsplash.com/photo-1568901346375-23c9450c58cd?q=80&w=1998&auto=format&fit=crop"
+                        alt="Special Burger">
+                    <div class="offer-details">
+                        <h3>Special Burger</h3>
+                        <p>Double patty perfection.</p>
+                        <div class="offer-price">
+                            <span class="original-price">$18.99</span>
+                            <span class="discounted-price">$15.19</span>
+                        </div>
+                        <button class="btn-order" onclick="location.href='#order'">Order Now</button>
+                    </div>
+                </div>
+                <div class="offer-card slide-in-right">
+                    <span class="badge">Limited Time</span>
+                    <img src="images/Spicy Pasta.avif"
+                        alt="Spicy Pasta">
+                    <div class="offer-details">
+                        <h3>Spicy Pasta</h3>
+                        <p>Arrabbiata with fresh basil.</p>
+                        <div class="offer-price">
+                            <span class="original-price">$14.99</span>
+                            <span class="discounted-price">$12.99</span>
+                        </div>
+                        <button class="btn-order" onclick="location.href='#order'">Order Now</button>
+                    </div>
+                </div>
+                <div class="offer-card slide-in-left">
+                    <span class="badge">Family Deal</span>
+                    <img src="https://images.unsplash.com/photo-1513104890138-7c749659a591?q=80&w=2070&auto=format&fit=crop"
+                        alt="Pizza Combo">
+                    <div class="offer-details">
+                        <h3>Pizza Combo</h3>
+                        <p>2 Large Pizzas + Drinks.</p>
+                        <div class="offer-price">
+                            <span class="original-price">$40.00</span>
+                            <span class="discounted-price">$34.99</span>
+                        </div>
+                        <button class="btn-order" onclick="location.href='#order'">Order Now</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section id="reviews" class="reviews-section section-padding fade-in-scroll">
+        <div class="container">
+            <h2 class="section-title">What Our Customers Say</h2>
+            <div class="carousel-container">
+                <button class="carousel-btn prev-btn"><i class="fas fa-chevron-left"></i></button>
+                <div class="carousel-track-container">
+                    <ul class="carousel-track">
+                        <li class="carousel-slide current-slide">
+                            <div class="testimonial-card">
+                                <div class="testimonial-header">
+                                    <img src="https://randomuser.me/api/portraits/women/44.jpg" alt="Sarah Jenkins"
+                                        class="customer-img">
+                                    <div class="customer-info">
+                                        <h4>Sarah Jenkins</h4>
+                                        <div class="stars">
+                                            <i class="fas fa-star"></i><i class="fas fa-star"></i><i
+                                                class="fas fa-star"></i><i class="fas fa-star"></i><i
+                                                class="fas fa-star-half-alt"></i>
+                                        </div>
+                                    </div>
+                                    <i class="fas fa-quote-right quote-icon"></i>
+                                </div>
+                                <p class="testimonial-text">"Absolutely the best pizza in town! The crust was perfect
+                                    and ingredients were fresh. Delivery was super fast too!"</p>
+                            </div>
+                        </li>
+                        <li class="carousel-slide">
+                            <div class="testimonial-card">
+                                <div class="testimonial-header">
+                                    <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="Michael Chen"
+                                        class="customer-img">
+                                    <div class="customer-info">
+                                        <h4>Michael Chen</h4>
+                                        <div class="stars">
+                                            <i class="fas fa-star"></i><i class="fas fa-star"></i><i
+                                                class="fas fa-star"></i><i class="fas fa-star"></i><i
+                                                class="fas fa-star"></i>
+                                        </div>
+                                    </div>
+                                    <i class="fas fa-quote-right quote-icon"></i>
+                                </div>
+                                <p class="testimonial-text">"Great service and even better food. The atmosphere is
+                                    lovely and the staff is very attentive. Highly recommended!"</p>
+                            </div>
+                        </li>
+                        <li class="carousel-slide">
+                            <div class="testimonial-card">
+                                <div class="testimonial-header">
+                                    <img src="https://randomuser.me/api/portraits/women/68.jpg" alt="Emily Davis"
+                                        class="customer-img">
+                                    <div class="customer-info">
+                                        <h4>Emily Davis</h4>
+                                        <div class="stars">
+                                            <i class="fas fa-star"></i><i class="fas fa-star"></i><i
+                                                class="fas fa-star"></i><i class="fas fa-star"></i><i
+                                                class="far fa-star"></i>
+                                        </div>
+                                    </div>
+                                    <i class="fas fa-quote-right quote-icon"></i>
+                                </div>
+                                <p class="testimonial-text">"I love the variety on the menu. The vegan options are
+                                    surprisingly delicious. Will definitely order again."</p>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+                <button class="carousel-btn next-btn"><i class="fas fa-chevron-right"></i></button>
+            </div>
+            <div class="carousel-nav">
+                <button class="carousel-indicator current-slide"></button>
+                <button class="carousel-indicator"></button>
+                <button class="carousel-indicator"></button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Reservation / Order Form -->
+    <section id="order" class="order-section section-padding fade-in-scroll">
+        <div class="container">
+            <h2 class="section-title">Place Your Order</h2>
+            <form id="order-form" class="order-form">
+                <div class="form-group">
+                    <label for="name">Full Name</label>
+                    <input type="text" id="name" required placeholder="John Doe">
+                </div>
+                <div class="form-group">
+                    <label for="email">Email Address</label>
+                    <input type="email" id="email" required placeholder="john@example.com">
+                </div>
+                <div class="form-group">
+                    <label for="phone">Phone Number</label>
+                    <input type="tel" id="phone" required placeholder="(123) 456-7890">
+                </div>
+                <div class="form-group">
+                    <label for="order-type">Service Type</label>
+                    <select id="order-type" required>
+                        <option value="delivery">Delivery</option>
+                        <option value="pickup">Pickup</option>
+                        <option value="reservation">Table Reservation</option>
+                    </select>
+                </div>
+                <div class="form-group" id="address-group">
+                    <label for="address">Delivery Address</label>
+                    <textarea id="address" rows="2" placeholder="123 Main St, Apt 4B"></textarea>
+                </div>
+                <div class="form-group">
+                    <label for="items">Select Items (Optional)</label>
+                    <select id="items">
+                        <option value="" disabled selected>Choose a popular item...</option>
+                        <option value="burger">Signature Burger</option>
+                        <option value="pizza">Classic Margherita</option>
+                        <option value="pasta">Spicy Pasta</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="message">Special Instructions</label>
+                    <textarea id="message" rows="3" placeholder="Allergies, gate code, etc."></textarea>
+                </div>
+                <button type="submit" class="btn btn-primary btn-block">Proceed to Payment</button>
+            </form>
+        </div>
+    </section>
+
+    <!-- Payment Modal -->
+    <div id="payment-modal" class="modal">
+        <div class="modal-content">
+            <span class="close-modal">&times;</span>
+            <h2>Secure Payment</h2>
+            <form id="payment-form">
+                <div class="form-group">
+                    <label for="card-name">Name on Card</label>
+                    <input type="text" id="card-name" required placeholder="John Doe">
+                </div>
+                <div class="form-group">
+                    <label for="card-number">Card Number</label>
+                    <input type="text" id="card-number" required placeholder="0000 0000 0000 0000" maxlength="19">
+                </div>
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="card-expiry">Expiry</label>
+                        <input type="text" id="card-expiry" required placeholder="MM/YY" maxlength="5">
+                    </div>
+                    <div class="form-group">
+                        <label for="card-cvc">CVC</label>
+                        <input type="text" id="card-cvc" required placeholder="123" maxlength="3">
+                    </div>
+                </div>
+                <button type="submit" class="btn btn-primary btn-block">Pay Now</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container footer-content">
+            <!-- Brand Column -->
+            <div class="footer-col brand-col">
+                <h3 class="footer-logo">
+                    <i class="fas fa-utensils"></i> Delicious <span class="highlight">Bites</span>
+                </h3>
+                <p class="footer-desc">Savor the flavor of our fresh, homemade meals. Your satisfaction is our top
+                    priority.</p>
+                <div class="contact-rows">
+                    <p><i class="fas fa-phone-alt"></i> (123) 456-7890</p>
+                    <p><i class="fas fa-envelope"></i> info@deliciousbites.com</p>
+                </div>
+                <div class="social-links">
+                    <a href="#" target="_blank"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#" target="_blank"><i class="fab fa-instagram"></i></a>
+                    <a href="#" target="_blank"><i class="fab fa-twitter"></i></a>
+                </div>
+            </div>
+
+            <!-- Quick Links Column -->
+            <div class="footer-col links-col">
+                <h3>Quick Links</h3>
+                <ul class="footer-links">
+                    <li><a href="#menu">Menu</a></li>
+                    <li><a href="#offers">Special Offers</a></li>
+                    <li><a href="#about">About Us</a></li>
+                    <li><a href="#order">Order Online</a></li>
+                </ul>
+            </div>
+
+            <!-- Contact Form Column -->
+            <div class="footer-col contact-col">
+                <h3>Contact Us</h3>
+                <form class="footer-contact-form">
+                    <input type="email" placeholder="Your email address..." required>
+                    <textarea placeholder="Your message..." rows="2" required></textarea>
+                    <button type="submit" class="btn btn-primary btn-block"><i class="fas fa-paper-plane"></i>
+                        Send</button>
+                </form>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 Delicious Bites | Designed with <i class="fas fa-heart"></i></p>
+        </div>
+    </footer>
+
+    <!-- Back to Top Button -->
+    <button id="back-to-top" title="Go to top"><i class="fas fa-arrow-up"></i></button>
+
+    <!-- JS -->
+    <script src="script.js"></script>
+</body>
+
+</html>
